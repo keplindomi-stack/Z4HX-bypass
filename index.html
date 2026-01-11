@@ -3,44 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CYLEX BYPASS STORE | PREMIUM</title>
+    <title>CYLEX BYPASS | PREMIUM ACCESS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #0d0d0d; color: #00ff00; font-family: 'Courier New', Courier, monospace; text-align: center; }
-        .container { padding: 20px; }
-        .card { background: #1a1a1a; border: 1px solid #00ff00; border-radius: 10px; margin: 20px auto; padding: 20px; max-width: 300px; transition: 0.3s; }
-        .card:hover { box-shadow: 0 0 15px #00ff00; }
-        h1 { text-shadow: 2px 2px #ff0000; }
-        .price { font-size: 24px; font-weight: bold; color: #fff; }
-        .btn { display: inline-block; background: #ff0000; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 10px; font-weight: bold; }
-        .btn:hover { background: #b30000; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: #050505; 
+            color: #ffffff; 
+            font-family: 'Inter', sans-serif; 
+            display: flex; align-items: center; justify-content: center; min-height: 100vh;
+            background: radial-gradient(circle at top right, #1a1a2e, #050505);
+        }
+        .wrapper { width: 90%; max-width: 450px; text-align: center; }
+        
+        /* HEADER STYLE */
+        header h1 { font-size: 2.5rem; font-weight: 900; letter-spacing: -1px; margin-bottom: 10px; color: #fff; }
+        header p { color: #888; font-size: 0.9rem; margin-bottom: 40px; }
+
+        /* CARD STYLE (Glassmorphism) */
+        .card { 
+            background: rgba(255, 255, 255, 0.03); 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+            border-radius: 20px; padding: 30px; margin-bottom: 25px;
+            backdrop-filter: blur(10px); transition: 0.4s ease;
+            text-align: left; position: relative; overflow: hidden;
+        }
+        .card::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+            background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+        }
+        .card:hover { transform: translateY(-10px); border-color: #00d2ff; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+
+        .card h3 { font-size: 1.2rem; margin-bottom: 15px; color: #00d2ff; text-transform: uppercase; }
+        .price { font-size: 2rem; font-weight: 700; margin-bottom: 15px; }
+        .price span { font-size: 0.9rem; color: #555; font-weight: 400; }
+
+        .features { list-style: none; margin-bottom: 25px; }
+        .features li { font-size: 0.85rem; color: #ccc; margin-bottom: 8px; display: flex; align-items: center; }
+        .features li::before { content: '✔'; color: #00d2ff; margin-right: 10px; font-weight: bold; }
+
+        /* BUTTON STYLE */
+        .btn { 
+            display: block; width: 100%; padding: 15px; background: #00d2ff; 
+            background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+            color: #fff; text-decoration: none; border-radius: 12px; 
+            font-weight: 700; text-align: center; transition: 0.3s;
+        }
+        .btn:hover { opacity: 0.9; box-shadow: 0 5px 15px rgba(0, 210, 255, 0.4); }
+
+        footer { margin-top: 50px; font-size: 0.7rem; color: #444; letter-spacing: 2px; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>💀 CYLEX BYPASS STORE 💀</h1>
-        <p>Hapus Logo PC & Dominasi Matchmaking HP!</p>
-        
+
+    <div class="wrapper">
+        <header>
+            <h1>CYLEX<span style="color: #00d2ff;">.</span></h1>
+            <p>Ultimate Free Fire Bypass for PC/Emulator.</p>
+        </header>
+
         <div class="card">
-            <h3>BYPASS 1 HARI</h3>
-            <p class="price">RP 30.000</p>
-            <ul>
-                <li>Anti-Ban Logic</li>
-                <li>No Logo PC</li>
-                <li>Fast Respon</li>
+            <h3>Daily Pass</h3>
+            <div class="price">30K <span>/ 1 Day</span></div>
+            <ul class="features">
+                <li>Bypass Matchmaking Emulator</li>
+                <li>Remove PC Icon in Lobby</li>
+                <li>Anti-Ban & Anti-Detect</li>
+                <li>Instant Activation</li>
             </ul>
-            <a href="https://wa.me/NOMOR_WA_LU?text=Bang+beli+bypass+1hari" class="btn">BELI SEKARANG</a>
+            <a href="https://wa.me/628XXXXXXXXXX?text=Order+Bypass+1+Hari" class="btn">PURCHASE NOW</a>
         </div>
 
         <div class="card">
-            <h3>BYPASS 2 HARI</h3>
-            <p class="price">RP 50.000</p>
-            <ul>
-                <li>Lebih Hemat!</li>
-                <li>Fitur Premium</li>
-                <li>Support 24/7</li>
+            <h3>Elite Pass</h3>
+            <div class="price">50K <span>/ 2 Days</span></div>
+            <ul class="features">
+                <li>All Daily Pass Features</li>
+                <li>Priority Support 24/7</li>
+                <li>Free Update if Patched</li>
+                <li>Cheaper Price</li>
             </ul>
-            <a href="https://wa.me/NOMOR_WA_LU?text=Bang+beli+bypass+2hari" class="btn">BELI SEKARANG</a>
+            <a href="https://wa.me/628XXXXXXXXXX?text=Order+Bypass+2+Hari" class="btn">PURCHASE NOW</a>
         </div>
+
+        <footer>
+            &copy; 2026 CYLEX PROJECT. ALL RIGHTS RESERVED.
+        </footer>
     </div>
+
 </body>
 </html>
