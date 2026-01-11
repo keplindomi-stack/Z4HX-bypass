@@ -3,118 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZH4X BYPASS | TELEGRAM ACCESS</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>ZH4X | QUANTUM ACCESS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #00f2ff;
+            --secondary: #7000ff;
+            --bg: #030303;
+            --card-bg: rgba(10, 10, 10, 0.8);
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            background-color: #050505; 
-            color: #ffffff; 
-            font-family: 'Inter', sans-serif; 
-            display: flex; align-items: center; justify-content: center; min-height: 100vh;
-            background: radial-gradient(circle at top right, #1a1a2e, #050505);
-            padding: 40px 0;
-        }
-        .wrapper { width: 90%; max-width: 450px; text-align: center; }
         
-        header h1 { font-size: 2.5rem; font-weight: 900; letter-spacing: -1px; margin-bottom: 10px; color: #fff; }
-        header p { color: #888; font-size: 0.9rem; margin-bottom: 30px; }
+        body { 
+            background-color: var(--bg); 
+            color: #fff; 
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            background-image: 
+                linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
 
-        /* MENU GROUP TELEGRAM */
-        .group-nav {
-            background: rgba(0, 136, 204, 0.1);
-            border: 1px dashed #0088cc;
-            padding: 12px;
+        .container {
+            max-width: 500px;
+            margin: 60px auto;
+            padding: 20px;
+            position: relative;
+        }
+
+        /* HEADER DEWA */
+        header { text-align: center; margin-bottom: 50px; }
+        header h1 { 
+            font-family: 'Syncopate', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 10px rgba(0, 242, 255, 0.5));
+            letter-spacing: -2px;
+        }
+        header p { color: #555; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; margin-top: 5px; }
+
+        /* NAVIGASI */
+        .nav-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 40px; }
+        .nav-item {
+            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
-            margin-bottom: 30px;
-            display: flex; align-items: center; justify-content: center;
-            text-decoration: none; color: #0088cc; font-weight: bold; font-size: 0.85rem;
+            text-decoration: none;
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-align: center;
+            background: var(--card-bg);
             transition: 0.3s;
+            backdrop-filter: blur(10px);
         }
-        .group-nav:hover { background: rgba(0, 136, 204, 0.2); }
+        .nav-item.tele { border-bottom: 3px solid #0088cc; }
+        .nav-item.disc { border-bottom: 3px solid #5865F2; }
+        .nav-item:hover { transform: translateY(-5s); background: rgba(255,255,255,0.05); }
 
-        .card { 
-            background: rgba(255, 255, 255, 0.03); 
-            border: 1px solid rgba(255, 255, 255, 0.1); 
-            border-radius: 20px; padding: 30px; margin-bottom: 25px;
-            backdrop-filter: blur(10px); transition: 0.4s ease;
-            text-align: left; position: relative; overflow: hidden;
+        /* CARD LEVEL DEWA */
+        .card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 35px;
+            margin-bottom: 30px;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            overflow: hidden;
+            transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        .card::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
-            background: linear-gradient(90deg, #0088cc, #00d2ff);
+        .card:hover { transform: scale(1.02); border-color: var(--primary); }
+
+        .card::after {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: conic-gradient(transparent, transparent, transparent, var(--primary));
+            animation: rotate 4s linear infinite;
+            z-index: -1; opacity: 0.2;
         }
-        .card:hover { transform: translateY(-10px); border-color: #0088cc; }
 
-        .card h3 { font-size: 1.2rem; margin-bottom: 15px; color: #0088cc; text-transform: uppercase; }
-        .price { font-size: 2rem; font-weight: 700; margin-bottom: 15px; }
-        .price span { font-size: 0.9rem; color: #555; font-weight: 400; }
+        @keyframes rotate { 100% { transform: rotate(360deg); } }
 
-        .features { list-style: none; margin-bottom: 25px; }
-        .features li { font-size: 0.85rem; color: #ccc; margin-bottom: 8px; display: flex; align-items: center; }
-        .features li::before { content: '✈️'; margin-right: 10px; }
+        .tag { font-size: 0.65rem; color: var(--primary); font-weight: 900; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; display: block; }
+        .card h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 10px; font-family: 'Syncopate', sans-serif; }
+        .price { font-size: 2.2rem; font-weight: 900; margin-bottom: 25px; display: flex; align-items: baseline; gap: 10px;}
+        .price span { font-size: 0.9rem; color: #444; }
 
-        .btn { 
-            display: block; width: 100%; padding: 15px; background: #0088cc; 
-            background: linear-gradient(90deg, #0088cc, #00d2ff);
-            color: #fff; text-decoration: none; border-radius: 12px; 
-            font-weight: 700; text-align: center; transition: 0.3s;
+        .feat-list { list-style: none; margin-bottom: 30px; }
+        .feat-list li { font-size: 0.85rem; color: #888; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+        .feat-list li::before { content: ''; width: 6px; height: 6px; background: var(--primary); border-radius: 50%; box-shadow: 0 0 10px var(--primary); }
+
+        /* BUTTONS */
+        .btn-box { display: grid; gap: 10px; }
+        .action-btn {
+            padding: 16px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 0.8rem;
+            text-align: center;
+            transition: 0.3s;
+            text-transform: uppercase;
         }
-        .btn:hover { box-shadow: 0 5px 15px rgba(0, 136, 204, 0.4); }
+        .at-tele { background: #0088cc; color: white; box-shadow: 0 10px 20px rgba(0, 136, 204, 0.2); }
+        .at-disc { background: #5865f2; color: white; box-shadow: 0 10px 20px rgba(88, 101, 242, 0.2); }
+        .action-btn:hover { opacity: 0.9; transform: translateY(-2px); box-shadow: 0 15px 30px rgba(0,0,0,0.5); }
 
-        footer { margin-top: 30px; font-size: 0.7rem; color: #444; letter-spacing: 2px; }
+        footer { text-align: center; margin-top: 50px; font-size: 0.6rem; color: #333; letter-spacing: 4px; }
     </style>
 </head>
 <body>
 
-    <div class="wrapper">
+    <div class="container">
         <header>
-            <h1>ZH4X<span style="color: #0088cc;">.</span></h1>
-            <p>Premium Bypass & Anti-Detection System.</p>
+            <h1>ZH4X<span style="color: #fff;">.</span></h1>
+            <p>// Quantum Bypass Layer</p>
         </header>
 
-        <a href="https://t.me/zeppelinlabs" class="group-nav">
-             📢 JOIN OFFICIAL TELEGRAM GROUP
-        </a>
+        <nav class="nav-grid">
+            <a href="https://t.me/zeppelinlabs" class="nav-item tele">TELEGRAM CHANNEL</a>
+            <a href="https://discord.gg/DU5ynqp7p" class="nav-item disc">DISCORD SERVER</a>
+        </nav>
 
         <div class="card">
-            <h3>DAILY BYPASS</h3>
-            <div class="price">5.000 <span>/ 1 Day</span></div>
-            <ul class="features">
+            <span class="tag">Entry Level</span>
+            <h3>DAILY ACCESS</h3>
+            <div class="price">5K <span>/ 24 HOURS</span></div>
+            <ul class="feat-list">
                 <li>Bypass Matchmaking Emulator</li>
-                <li>Remove PC Icon in Lobby</li>
-                <li>Anti-Ban Security</li>
-                <li>24h Full Access</li>
+                <li>Instant Logo PC Removal</li>
+                <li>Anti-Cheat Bypass v.2.6</li>
             </ul>
-            <a href="http://t.me/undefinedable" class="btn">BUY VIA TELEGRAM</a>
+            <div class="btn-box">
+                <a href="http://t.me/undefinedable" class="action-btn at-tele">Buy Telegram</a>
+                <a href="https://discord.gg/DU5ynqp7p" class="action-btn at-disc">Buy Discord</a>
+            </div>
         </div>
 
         <div class="card">
-            <h3>WEEKLY BYPASS</h3>
-            <div class="price">30.000 <span>/ 7 Days</span></div>
-            <ul class="features">
+            <span class="tag">Most Popular</span>
+            <h3>WEEKLY ACCESS</h3>
+            <div class="price">30K <span>/ 7 DAYS</span></div>
+            <ul class="feat-list">
                 <li>All Daily Features Included</li>
-                <li>Priority Slot Entry</li>
-                <li>Cheaper Weekly Cost</li>
-                <li>Active Support</li>
+                <li>Priority Slot Matching</li>
+                <li>Auto-Update Support</li>
             </ul>
-            <a href="http://t.me/undefinedable" class="btn">BUY VIA TELEGRAM</a>
+            <div class="btn-box">
+                <a href="http://t.me/undefinedable" class="action-btn at-tele">Buy Telegram</a>
+                <a href="https://discord.gg/DU5ynqp7p" class="action-btn at-disc">Buy Discord</a>
+            </div>
         </div>
 
-        <div class="card" style="border: 1px solid #00d2ff;">
-            <h3>MONTHLY BYPASS</h3>
-            <div class="price">100.000 <span>/ 30 Days</span></div>
-            <ul class="features">
-                <li>Best Value Package</li>
-                <li>Private Server Access</li>
-                <li>Free Update During Subs</li>
-                <li>Full Month Dominance</li>
+        <div class="card" style="border: 1px solid var(--secondary);">
+            <span class="tag" style="color: var(--secondary);">V.I.P ACCESS</span>
+            <h3>MONTHLY ACCESS</h3>
+            <div class="price">100K <span>/ 30 DAYS</span></div>
+            <ul class="feat-list">
+                <li>Ultimate Private Access</li>
+                <li>Dedicated Bypass Engine</li>
+                <li>Free Maintenance Support</li>
             </ul>
-            <a href="http://t.me/undefinedable" class="btn">BUY VIA TELEGRAM</a>
+            <div class="btn-box">
+                <a href="http://t.me/undefinedable" class="action-btn at-tele">Buy Telegram</a>
+                <a href="https://discord.gg/DU5ynqp7p" class="action-btn at-disc">Buy Discord</a>
+            </div>
         </div>
 
         <footer>
-            &copy; 2026 ZH4X PROJECT. ENCRYPTED ACCESS.
+            &copy; 2026 SYSTEM ZH4X. ALL PROTOCOLS ENCRYPTED.
         </footer>
     </div>
 
